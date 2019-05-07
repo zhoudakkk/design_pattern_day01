@@ -111,6 +111,17 @@ public class AppUtils_2 {
            才会初始化 UTILS_2 类 因此第一次调用getInstance会导致虚拟机加载AppUtils_2Holder类
            这样的方法不仅保证线程安全也能保证单例对象唯一性同时也实现了单例的实例化
            所以推荐使用这个方法
+           
+# static在内存中是怎么分配的   
+
+  为什么静态修饰后反复获取这个类 就是唯一的一个呢?在内存中有是怎么存放的呢?
+  https://www.cnblogs.com/avivahe/p/5747127.html
+  
+  
+  
+
+
+           
 
  
  
