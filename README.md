@@ -75,10 +75,12 @@ public class AppUtils_0 {
         1 给AppUtils 的实例分配内存
         2 调用AppUtils的构造函数,初始化成员字段
         3 将APP_UTILS_1_1对象指向分配的内存空间
-        但是 java的编译器允许处理器乱序执行以及Cache,寄存器到内存回写内存顺序规定上面的 2 和3 是没有先后的顺序的
+        但是 java的编译器允许处理器乱序执行以及Cache,
+        寄存器到内存回写内存顺序规定上面的 2 和3 是没有先后的顺序的
         就是说 执行顺序可以是 123 也可以是132 
-        (就是在两个线程中同时执行getInstance()函数 假设a线程在执行很快 APP_UTILS_1_1就不会是空了 b线程就会直接取走APP_UTILS_1_1
-        在使用就会有问题了)
+        就是在两个线程中同时执行getInstance()函数 假设a线程在执行很快 APP_UTILS_1_1就不会是空了 
+        b线程就会直接取走APP_UTILS_1_1在使用就会有问题了
+        
         
  #### 优点 : 
             资源利用率高,第一次执行getInstance是单例对象才会被实例化
@@ -87,6 +89,23 @@ public class AppUtils_0 {
              第一次加载反应稍慢,也由于java内存模型的原因偶尔加载失败
              在高并发环境下也有一定的缺陷,虽然概率小
 
+## 3 静态内部单例模式
+
+```
+public class AppUtils_2 {
+    
+    private AppUtils_2() {
+    }
+    private static class AppUtils_2Holder {
+        private static final AppUtils_2 UTILS_2 = new AppUtils_2();
+    }
+
+    public static AppUtils_2 getInstance() {
+        return AppUtils_2Holder.UTILS_2;
+    }
+}
+
+```
 
  
  
