@@ -131,7 +131,21 @@ public class AppUtils_2 {
   但缺点是，存在栈中的数据大小与生存期必须是确定的，缺乏灵活性。栈中主要存放一些基本类型的变量
   （int, short, long, byte, float, double, boolean, char）和对象句柄。
   
-  https://www.cnblogs.com/avivahe/p/5747127.html
+   一般的类 在申明的时候在栈中设置一个地址存放的是为null的应用
+   在XX xx = new XX();的时候会在堆中分配内存存放xx 然后堆中的引用指向这个地址
+   
+# static
+
+   内存不止分为堆和栈，还有另外3个区,
+   静态变量在静态存储区 所以所有的静态变量和静态内都是在这个静态区的
+   
+   一个类中，一个static变量只会有一个内存空间，虽然有多个类实例，但这些类实例中的这个static变量会共享同一个内存空间.
+   就是说XX类 有很多new出来的类 xx_0 xx_1; 但是XX类中的static修饰的 变量 在xx_0 或者xx_1 中都是一个地址
+   所以这才是单例模式的原理
+  
+   
+  参考地址  https://www.cnblogs.com/avivahe/p/5747127.html
+  参考地址  https://blog.csdn.net/qianyayun19921028/article/details/80365126
   
   
   
