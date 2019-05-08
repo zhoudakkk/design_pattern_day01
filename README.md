@@ -149,7 +149,7 @@ public class AppUtils_2 {
   参考地址  https://blog.csdn.net/qianyayun19921028/article/details/80365126
   
   
-  
+  问题 静态内部内 中也存在静态变量和非静态变量 这些内存有是怎么分配的呢?
 
 
            
