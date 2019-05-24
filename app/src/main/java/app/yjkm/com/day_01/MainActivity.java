@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        AppUtils_0.getInstance();
+        AppUtils_2 appUtils_2 = new AppUtils_2();
+
     }
 }
